@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeloPlus - Blog Post</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            height: 50px;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 30px;
+        }
+
+        nav {
+            display: flex;
+            height: 100%;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 25px;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            border-left: 1px solid #222;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .search-icon {
+            color: white;
+            margin-right: 15px;
+            font-size: 16px;
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border-left: 1px solid #222;
+        }
+
+        .offer-btn {
+            background-color: #00a0e9;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            margin-right: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagine1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-banner h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .post-meta {
+            font-size: 14px;
+            margin-top: 15px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Updated blog content to match image */
+        .blog-content h2 {
+            margin: 30px 0 20px;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-align: center;
+            color: #333;
+        }
+
+        .blog-content p {
+            color: #888;
+            margin-bottom: 25px;
+            font-size: 14px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .blog-content a {
+            color: #00a0e9;
+            text-decoration: none;
+        }
+
+        .blog-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Updated Quote Block to match image exactly */
+        .quote-block {
+            display: flex;
+            margin: 40px 0;
+        }
+
+        .quote-author {
+            width: 60px;
+            text-align: center;
+            font-size: 13px;
+            color: #777;
+            margin-top: 25px;
+        }
+
+        .quote-content {
+            position: relative;
+            padding-left: 30px;
+            flex-grow: 1;
+        }
+
+        .quote-mark {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 60px;
+            line-height: 1;
+            color: #333;
+            font-family: Georgia, serif;
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            padding-top: 5px;
+        }
+
+        /* Blog Images */
+        .blog-image {
+            margin: 30px 0;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            background-color: #000;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .related-articles h2 {
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .articles-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 0 auto;
+            max-width: 1000px;
+            padding: 0 20px;
+            margin-bottom: 40px;
+        }
+
+        .article-card {
+            width: 300px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .article-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .article-card:first-child {
+            border: 2px solid #00a0e9;
+        }
+
+        .article-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Exactly matched to the image */
+        .view-all-btn {
+            display: inline-block;
+            background-color: #002137;
+            color: white;
+            padding: 12px 0;
+            text-transform: uppercase;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: 600;
+            width: 280px;
+            letter-spacing: 0.5px;
+        }
+
+        .article-first {
+            position: relative;
+        }
+
+        .article-first::after {
+            content: "→";
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+        }
+
+        /* Social Media Section */
+        .social-section {
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .social-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .social-titles {
+            font-weight: bold;
+            margin-right: 25px;
+            text-transform: uppercase;
+            font-size: 20px;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .facebook-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .fb-buttons {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        /* Facebook Buttons */
+        .fb-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            overflow: hidden;
+            height: 20px;
+            border: none;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        .fb-like-btn {
+            display: flex;
+        }
+
+        .fb-like-thumb {
+            background-color: #3b5998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 2px 0 0 2px;
+        }
+
+        .fb-like-thumb:before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+        }
+
+        .fb-like-text {
+            background-color: #3b5998;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 0 6px;
+            line-height: 20px;
+            border-radius: 0 2px 2px 0;
+        }
+
+        .fb-share-btn {
+            background-color: #3b5998;
+            color: white;
+            padding: 0 6px;
+            border-radius: 2px;
+            font-size: 11px;
+            font-weight: bold;
+            height: 20px;
+            line-height: 20px;
+        }
+
+        .fb-text {
+            font-size: 12px;
+            color: #555;
+            margin-left: 5px;
+        }
+
+        .fb-profiles {
+            display: flex;
+        }
+
+        .fb-profiles img {
+            width: 32px;
+            height: 32px;
+            margin-right: 1px;
+        }
+
+        /* Footer - Updated with adjusted line */
+        .footer-top {
+            background-color: #000;
+            border-top: 1px solid #333;
+            padding: 20px 0;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .footer-nav a:nth-child(2) {
+            color: #00a0e9;
+        }
+
+        .footer-bottom {
+            background-color: #000;
+            color: white;
+            padding: 20px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white line */
+        }
+
+        .footer-logo {
+            margin-bottom: 10px;
+        }
+
+        .footer-logo img {
+            height: 30px;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="logo">
+            <img src="velo.jpg" alt="VELOPLUS">
+        </div>
+        <nav>
+            <a href="#">Biciclete</a>
+            <a href="#">Piese Bicicletă</a>
+            <a href="#">Accesorii Bicicletă</a>
+            <a href="#">Echipamente</a>
+        </nav>
+        <div class="search-container">
+            <div class="search-icon">&#128269;</div>
+            <button class="offer-btn">OFERTE</button>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+        <h1>TITLU BLOG POST</h1>
+        <div class="post-meta">Scris de Tudor Popa în 19.08.2016</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="blog-content">
+            <h2>HEADING 2</h2>
+            <p>Cras mattis consectetur purus sit amet fermentum. Cras mattis consectetur purus sit amet fermentum. <a href="#">Link example</a>, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            
+            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            
+            <!-- Quote Block Updated to Match Image -->
+            <div class="quote-block">
+                <div class="quote-author">
+                    John Doe
+                </div>
+                <div class="quote-content">
+                    <div class="quote-mark">"</div>
+                    <div class="quote-text">"Cras mattis consectetur purus sit amet fermentum. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget"</div>
+                </div>
+            </div>
+            
+            <p>Cras mattis consectetur purus sit amet fermentum. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            
+            <!-- Blog Image -->
+            <img src="imagine2.jpg" alt="Woman with tattoos and backpack" class="blog-image">
+            
+            <p>Cras mattis consectetur purus sit amet fermentum. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+    </div>
+    
+    <!-- Related Articles -->
+    <div class="related-articles">
+        <h2>ALTE ARTICOLE RELEVANTE</h2>
+        <div class="articles-grid">
+            <div class="article-card article-first">
+                <img src="imagine3.jpg" alt="Cyclist racing">
+                <div class="article-title">TITLU ARTICOL SPORTIV</div>
+            </div>
+            <div class="article-card">
+                <img src="imagine4.jpg" alt="Article Image">
+                <div class="article-title">ALT TITLU ARTICOL SPORTIV PE TREI RANDURI...</div>
+            </div>
+            <div class="article-card">
+                <img src="imagine5.jpg" alt="Bicycle gears">
+                <div class="article-title">INCA UN TITLU ARTICOL SPORTIV PE TREI RANDURI...</div>
+            </div>
+        </div>
+        <a href="#" class="view-all-btn">VEZI TOATE ARTICOLELE</a>
+    </div>
+    
+    <!-- Social Media Section -->
+    <div class="social-section">
+        <div class="social-content">
+            <div class="social-titles">
+                FACEBOOK<br>
+                TWITTER
+            </div>
+            <div class="facebook-section">
+                <div class="fb-buttons">
+                    <div class="fb-button fb-like-btn">
+                        <div class="fb-like-thumb"></div>
+                        <div class="fb-like-text">Like</div>
+                    </div>
+                    <button class="fb-share-btn">Share</button>
+                    <span class="fb-text">Bogdan Albulescu and 2.7M others like this.</span>
+                </div>
+                <div class="fb-profiles">
+                    <img src="imagine6.jpg" alt="Profile 1">
+                    <img src="imagine7.jpg" alt="Profile 2">
+                    <img src="imagine8.jpg" alt="Profile 3">
+                    <img src="imagine9.jpg" alt="Profile 4">
+                    <img src="imagine10.jpg" alt="Profile 5">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer with adjusted white line -->
+    <div class="footer-top">
+        <div class="footer-nav">
+            <a href="#">Biciclete</a>
+            <a href="#">Piese Bicicletă</a>
+            <a href="#">Accesorii Bicicletă</a>
+            <a href="#">Echipamente</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Intrebari Frecvente</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-logo">
+            <img src="velo.jpg" alt="VELOPLUS">
+        </div>
+        <div class="copyright">Copyright VeloPlus 2016</div>
+    </div>
+</body>
+</html>
