@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Thread Tension in Sewing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;   
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+            padding-top:60px;
+        }
+        
+        .main-article {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: auto;
+        }
+        
+        .article-content {
+            padding: 20px;
+        }
+        
+        .article-title {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .article-date {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .article-text {
+            margin-bottom: 20px;
+        }
+        
+        .article-quote {
+            border-left: 4px solid #aed0d4;
+            padding-left: 40px;
+            font-size: 20px;
+            margin: 20px 0;
+        }
+      
+        .read-more {
+            text-align: right;
+            margin-top: 20px;
+        }
+        
+        .read-more button {
+            background-color: #95b1a9;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .related-section {
+            margin-top: 40px;
+        }
+        
+        .related-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .related-articles {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .related-article {
+            width: 32%;
+            margin-bottom: 20px;
+        }
+        
+        .related-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        
+        .related-article-title {
+            font-size: 16px;
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+        }
+        
+        .related-article-excerpt {
+            font-size: 14px;
+            color: #777;
+            margin: 0;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #777;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+        
+     
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <article class="main-article">
+            <img src="imagine1.jpg" alt="Sewing supplies including thread, thimble and measuring tape" class="article-image">
+            
+            <div class="article-content">
+                <h1 class="article-title">Understanding Thread Tension in Sewing</h1>
+                <p class="article-date">April 24, 2024</p>
+                
+                <div class="article-text">
+                    <p>Lorem ipsum dolor sming lagu ar commodo iutdus, nelescie familit, sed ferme tempus euismod tempor riveridint ducit. Etiam nunc nam susa, feviniter eu risuse a torto singu consecteur. Integer vor curne et luo, suscer tibor helix ryftige jhet olunn, quin et her.</p>
+                    
+                    <div class="article-quote">
+                        <p>Quisque eget turpis sed sapien malesuada aliquet vitae eu ex.</p>
+                    </div>
+                    
+                    <p>Quisque eget turpis sed sapien malesuada aliquet vitae et eu ex, in-que oreleit cuggus elementum stantum au vita lee trique. Et so disse cumnis, accursan id.</p>
+                </div>
+                
+                <div class="read-more">
+                    <button>Read More</button>
+                </div>
+            </div>
+        </article>
+        
+        <section class="related-section">
+            <h2 class="related-title">Related Articles</h2>
+            
+            <div class="related-articles">
+                <div class="related-article">
+                    <img src="imagine2.jpg" alt="Vegetable gardening" class="related-image">
+                    <h3 class="related-article-title">Tips for Vegetable Gardening</h3>
+                    <p class="related-article-excerpt">Lorem ipsum dolor sique.</p>
+                </div>
+                
+                <div class="related-article">
+                    <img src="imagine3.jpg" alt="Kitchen cookware" class="related-image">
+                    <h3 class="related-article-title">Choosing the Right Cookware</h3>
+                    <p class="related-article-excerpt">Lorem ipsum solornotque.</p>
+                </div>
+                
+                <div class="related-article">
+                    <img src="imagine4.jpg" alt="National park with lake" class="related-image">
+                    <h3 class="related-article-title">Exploring the National Parks</h3>
+                    <p class="related-article-excerpt">Lorem ipsum dolorsmet.</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            &copy; 2024 Your Website
+        </footer>
+    </div>
+</body>
+</html>

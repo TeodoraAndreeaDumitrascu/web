@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melloway Studios - Mixing 101</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Integrat -->
+    <style>
+        /* Reset și stiluri generale */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header și navigație */
+        .main-header {
+            background-color:rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 0;
+            box-shadow: none;
+            transition: background-color 0.3s ease;
+            height: 90px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .left-nav, .right-nav {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 0 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            height: 90px;
+        }
+
+        .nav-link:hover {
+            color: #00a0e9;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background-image: url('imagine1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            min-height: 600px;
+            color: white;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-top: 0px; /* Spațiu pentru header */
+            text-align: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-banner .container {
+            position: relative;
+            z-index: 1;
+            padding-top: 60px;
+        }
+
+        .guide-label {
+            display: inline-block;
+            border: 1px solid rgba(196, 106, 17, 0.7);
+            padding: 5px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: rgba(222, 131, 4, 0.9);
+        }
+
+        .author-date {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .page-title {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .post-meta {
+            font-size: 16px;
+            color: rgba(222, 131, 4, 0.9);
+            font-weight: 300;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+        }
+
+        .article {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-title {
+            font-size: 28px;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .article-content {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .intro-text {
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+        }
+
+        /* Learn Sections */
+        .learn-section {
+            margin: 40px 0;
+            position: relative;
+            padding-left: 30px;
+          
+        }
+
+        .learn-section:before {
+            content: "•";
+            font-size: 30px;
+            color: #00a0e9;
+            position: absolute;
+            left: 0;
+            top: -5px;
+ 
+}
+      
+
+        .learn-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-weight: bold; 
+            font-style: normal;
+        }
+
+      
+        /* Secondary Title */
+        .secondary-title {
+            font-size: 24px;
+            line-height: 1.3;
+            margin: 40px 0 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Author Info lorem*/
+        .author-info {
+            margin: 40px 0;
+            border-left: 3px solid #00a0e9;
+            padding-left: 20px;
+  font-weight: bold; 
+  font-style: normal; 
+}
+        
+
+        .author-info {
+  border-left: none; 
+  padding-left: 0;  
+}
+.author-info p {
+    margin-bottom: 500px; 
+}
+        /* Post Tags */
+        .post-tags {
+            margin: 40px 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #f1f1f1;
+            color: #555;
+            padding: 5px 15px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tag:hover {
+            background-color: #00a0e9;
+            color: white;
+        }
+
+        /* Social Links */
+        .social-links {
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .social-links span {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: 15px;
+            color: #777;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #f1f1f1;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-icon:hover {
+            background-color: #00a0e9;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .twitter {
+            background-color: #1da1f2;
+        }
+
+        .instagram {
+            background-color: #e1306c;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            margin-top: 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .article-card {
+            border: 1px solid #eee;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-image {
+            position: relative;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .article-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #00a0e9;
+            color: white;
+            padding: 5px 10px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 3px;
+        }
+
+        .article-info {
+            padding: 20px;
+        }
+
+        .article-info .article-title {
+            font-size: 18px;
+            text-align: left;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .article-excerpt {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            color: #00a0e9;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .main-footer {
+            background-color: #073a37;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            width: 200px;
+            margin-right: 30px;
+        }
+
+        .footer-logo img {
+            height: 100px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-grow: 1;
+            justify-content: space-around;
+        }
+
+        .footer-column h4 {
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-column a:hover {
+            color: #00a0e9;
+        }
+
+        .social-icons {
+            display: flex;
+        }
+
+        .footer-column .social-icon {
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .footer-column .social-icon:hover {
+            background-color: #187570;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- CONTAINER 1: Header cu navigație -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="left-nav">
+                    <a href="#" class="nav-link">HOME</a>
+                    <a href="#" class="nav-link">ABOUT US</a>
+                    <a href="#" class="nav-link">EQUIPMENT</a>
+                </div>
+                
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="logo.jpg" alt="Mellowdy Studios">
+                    </a>
+                </div>
+                
+                <div class="right-nav">
+                    <a href="#" class="nav-link">ACCOMODATION</a>
+                    <a href="#" class="nav-link">BOOKING</a>
+                    <a href="#" class="nav-link">BLOG</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTAINER 2: Hero Banner Section -->
+    <section class="hero-banner">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="guide-label">GUIDE</div>
+            <div class="author-date">BY: JOHN DOE | JULY 18 2021</div>
+            
+            <h1 class="page-title">
+                MIXING 101:<br>
+                START MIXING YOUR TRACKS<br>
+                IN CUBASE PRO 11
+            </h1>
+            
+            <div class="post-meta">
+                Our beloved sound engineer created a guide for you on how to<br>
+                start mixing your tracks in Cubase Pro 11 DAW
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTAINER 3: Main Content Section -->
+    <main class="main-content">
+        <div class="container">
+            <!-- CONTAINER 3.1: Article Section -->
+            <article class="article">
+                <h2 class="article-title">Dictumst massa turpis diam enim, Mattis dui amet convallis sit sollicitudin.</h2>
+                
+                <div class="article-content">
+                    <!-- CONTAINER 3.1.1: Intro Paragraph -->
+                    <p class="intro-text">
+                        Nulla eu condimentum adipiscing. Duis tellus felis orci, turpis sapien posuere magnis. Duis quis est quam blandit eu bibendum vestibulum ultricies! Nibh commodo amet eget sem ut arcu, magna quis nec eget tincidunt. Praesent feugiat odio adipiscing. Euismod tellus scelerisque hendrerit cras tempus viverra aliquet integer. Sed faucil, sapien eget vestibulum adipiscing velit.
+                    </p>
+                    
+                    <p>
+                        Nulla eu condimentum adipiscing. Duis tellus felis orci, turpis sapien posuere magnis. Duis quis est quam blandit eu bibendum vestibulum ultricies. <strong>Nibh commodo amet eget sem ut arcu</strong>, magna quis nec eget tincidunt.
+                    </p>
+
+                    <!-- CONTAINER 3.1.2: Learn Section 1 -->
+                    <div class="learn-section">
+                        <h3 class="learn-title">Learn Ipsum</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae risus magna nulla, sed enim in quis netus ut bibendum et bibendum adipiscing. Vitae elementum nulla sit on ut vitae augue elon sunt. Eguimoa ibuem enim sit on ut vitae elementum risus nulla magna nulla sit amet, nec quis est alis morbi efficitur felis quat congue. Eguimoa nec.
+                        </p>
+                    </div>
+
+                    <!-- CONTAINER 3.1.3: Learn Section 2 -->
+                    <div class="learn-section">
+                        <h3 class="learn-title">Lorem ipsum dolor sit.</h3>
+                        <p>
+                            Lorem ipsum hendrerit nisl bibendum hendrerit, vestibulum eliot rhe vitae condimentum enim porttitor adipiscing on non risous, sed tincidunt ligart pretium hendrerit nisi est sed. Leo eguimoa eguimoa fecsibus tempus condimentum amet aliquam orci tellus et, fecsibus tellus, volutpat hendrerit in ornare, volutpat in enim eguimoa. Nulus nec, eguimoa aliquam nec. Morbi risus valreae tre etons nibh eguimoa nec aliquam vitae et neans.
+                        </p>
+                        <p>
+                            Lorem ipsum hendrerit nisl bibendum hendrerit, vestibulum eliot rhe vitae condimentum enim porttitor adipiscing on non risous, sed tincidunt you'll never want to go back.
+                        </p>
+                    </div>
+
+                    <!-- CONTAINER 3.1.4: Learn Section 3 -->
+                    <div class="learn-section">
+                        <h3 class="learn-title">Lorem ipsum dolor sit amet.</h3>
+                        <p>
+                            Nam mollis amet aliquet pharetra. Congue leo tellus eros dictum, consectetur amet enim porttitor aliquam orta. Vivamus ir nunc nisi sed cum luctus adipiscing phabitar. Ut ornare et luctus phabitar ornare sed congue viverra ir nunc dictum ornare vestibulum amet dictum luctus.
+                        </p>
+                        <p>
+                            Nulla eu condimentum adipiscing. Duis tellus felis orci, turpis sapien posuere luctus, vestibulum amet orci pharetra dictum. Nibh commodo amet eget sem ut arcu, magna quis nec eget tincidunt. Praesent feugiat odio adipiscing risus. Sed nisi tellus in magna adipiscing.
+                        </p>
+                    </div>
+
+                    <!-- CONTAINER 3.1.5: Video Section -->
+                    <div class="video-section">
+                        <div class="video-container">
+                            <img src="imagine2.jpg" alt="Video thumbnail">
+                        
+                                <img src="https://via.placeholder.com/60" alt="Play">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONTAINER 3.1.6: Final Section -->
+                    <h2 class="secondary-title">Tempor id dignissim proin enim volutpat vitae cursus vitae eget id lorem lorem.</h2>
+                    
+                    <p>
+                        Quisque eu condimentum est et elit pharetra, in ut et hendrerit dictumst. Eu nisi eget nec et vel vitae adipiscing massa lacus, tortor hendrerit id pellentesque nisl cursus lectus et el orci ornare. Eguimol et et egestas, odio sit eget blandit risus tempus, phasellus et tincidunt et vel quis cursus libero libero amet libero. Ut metus orci, tempor, vel pretium sit lectus vitae vitae libero aliquet molestie eros. Et et sed pretium, hendrerit nec.
+                    </p>
+                    
+                    <p>
+                        Nam tempus aliquam hendrerit vitae, vitam congue hendrerit. Vitae hendrerit sed et in congue sed dolor, tempor sit el congue tellum, tempus aliquam in sed hendrerit, et el on id lectur, eguimoa tellum vel egid, et eguimoa amet eguimoa temporam adipiscing.
+                    </p>
+
+                    <!-- CONTAINER 3.1.7: Author Info -->
+                    <div class="author-info">
+                        <p>
+                            Lorem hendrerit adipiscing. Hender congue sit el sed fecsibus ornare convallis. Aliquet velit nec eguimoa amet eguimoa sed tempor in, el quis nec quis, et eguimoa amet eguimoa temporam adipiscing.
+                        </p>
+                    </div>
+
+                    <!-- CONTAINER 3.1.8: Post Tags -->
+                    <div class="post-tags">
+                        <a href="#" class="tag">TAG #1</a>
+                        <a href="#" class="tag">TAG #2</a>
+                        <a href="#" class="tag">TAG #3</a>
+                        <a href="#" class="tag">TAG #4</a>
+                        <a href="#" class="tag">TAG #5</a>
+                    </div>
+
+                    <!-- CONTAINER 3.1.9: Social Media Links -->
+                    <div class="social-links">
+                        <span>SPREAD THE WORD</span>
+                        <a href="#" class="social-icon facebook"></a>
+                        <a href="#" class="social-icon twitter"></a>
+                        <a href="#" class="social-icon instagram"></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CONTAINER 3.2: Related Articles -->
+            <section class="related-articles">
+                <h2 class="section-title">RELATED ARTICLES</h2>
+              
+                <div class="articles-grid">
+              
+                  <!-- Article 1 -->
+                  <div class="article-card">
+                    <div class="article-image">
+                      <img src="imagine3.jpg" alt="Mixing console">
+                    </div>
+                    <div class="article-info">
+                      <span class="article-category">GUIDE</span>
+                      <h3 class="article-title">
+                        MIXING 101:<br>
+                        <strong>START MIXING YOUR TRACKS IN CUBASE PRO 11</strong>
+                      </h3>
+                      <p class="article-excerpt">
+                        Our beloved sound engineer created a guide for you on how to start mixing your tracks in Cubase Pro 11 DAW...
+                      </p>
+                      <a href="#" class="read-more">READ THE GUIDE →</a>
+                    </div>
+                  </div>
+              
+                  <!-- Article 2 -->
+                  <div class="article-card">
+                    <div class="article-image">
+                      <img src="imagine4.jpg" alt="Studio recording">
+                    </div>
+                    <div class="article-info">
+                      <span class="article-category">STORY</span>
+                      <h3 class="article-title">
+                        STUDIO STORY:<br>
+                        <strong>HOW JOHN RECORDED 4 SONGS IN ONE DAY</strong>
+                      </h3>
+                      <p class="article-excerpt">
+                        It was a Tuesday in mid March of 2021, that day our engineer John managed to record 4 songs in one day...
+                      </p>
+                      <a href="#" class="read-more">READ THE STORY →</a>
+                    </div>
+                  </div>
+              
+                  <!-- Article 3 -->
+                  <div class="article-card">
+                    <div class="article-image">
+                      <img src="imagine5.jpg" alt="Mastering controls">
+                    </div>
+                    <div class="article-info">
+                      <span class="article-category">GUIDE</span>
+                      <h3 class="article-title">
+                        MASTER YOUR MASTERS:<br>
+                        <strong>MASTERING YOUR SONGS SHOULDN’T BE SO HARD</strong>
+                      </h3>
+                      <p class="article-excerpt">
+                        It is a great day, you finished mixing your tracks, everything sounds flawless but something bothers you, mastering...
+                      </p>
+                      <a href="#" class="read-more">READ THE GUIDE →</a>
+                    </div>
+                  </div>
+              
+                </div>
+    </main>
+
+    <!-- CONTAINER 4: Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <!-- CONTAINER 4.1: Footer Content -->
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo2.jpg" alt="Melloway Studios">
+                </div>
+                
+                <!-- CONTAINER 4.2: Footer Links -->
+                <div class="footer-links">
+                    <!-- CONTAINER 4.2.1: Contact Column -->
+                    <div class="footer-column">
+                        <h4>CONTACT</h4>
+                        <ul>
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">ABOUT US</a></li>
+                            <li><a href="#">EQUIPMENT</a></li>
+                            <li><a href="#">ACCOMODATION</a></li>
+                            <li><a href="#">BOOKING</a></li>
+                            <li><a href="#">BLOG</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- CONTAINER 4.2.2: Legal Column -->
+                    <div class="footer-column">
+                        <h4>LEGAL</h4>
+                        <ul>
+                            <li><a href="#">PRIVACY POLICY</a></li>
+                            <li><a href="#">COOKIES</a></li>
+                            <li><a href="#">TERMS & CONDITIONS</a></li>
+                           
+                        </ul>
+                    </div>
+                    
+                    <!-- CONTAINER 4.2.3: Social Media Column -->
+                    <div class="footer-column">
+                        <h4>SOCIAL MEDIA</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><img src="imagine6.jpg" alt="Facebook"></a>
+                            <a href="#" class="social-icon"><img src="imagine7.jpg" alt="Twitter"></a>
+                            <a href="#" class="social-icon"><img src="imagine8.jpg" alt="Instagram"></a>
+                            <a href="#" class="social-icon"><img src="imagine9.jpg" alt="YouTube"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CONTAINER 4.3: Copyright -->
+            <div class="copyright">
+                <p>&copy; 2024 Melloway Studios. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
